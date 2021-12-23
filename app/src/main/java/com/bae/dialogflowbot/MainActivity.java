@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements BotReply {
   EditText editMessage;
   ImageButton btnSend;
 
-  //dialogFlow
   private SessionsClient sessionsClient;
   private SessionName sessionName;
   private String uuid = UUID.randomUUID().toString();
@@ -75,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements BotReply {
   private void setUpBot() {
     try {
       InputStream stream = this.getResources().openRawResource(R.raw.credential);
+
       GoogleCredentials credentials = GoogleCredentials.fromStream(stream)
           .createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
       String projectId = ((ServiceAccountCredentials) credentials).getProjectId();
@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity implements BotReply {
       SessionsSettings.Builder settingsBuilder = SessionsSettings.newBuilder();
       SessionsSettings sessionsSettings = settingsBuilder.setCredentialsProvider(
           FixedCredentialsProvider.create(credentials)).build();
+
       sessionsClient = SessionsClient.create(sessionsSettings);
       sessionName = SessionName.of(projectId, uuid);
 
-      Log.d(TAG, "projectId : " + projectId);
     } catch (Exception e) {
       Log.d(TAG, "setUpBot: " + e.getMessage());
     }

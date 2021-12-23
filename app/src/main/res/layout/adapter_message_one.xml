@@ -6,33 +6,50 @@
     android:layout_height="wrap_content">
 
   <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:padding="5dp"
-      android:textColor="@android:color/white"
-      android:textSize="20sp"
-      android:minHeight="50dp"
       android:id="@+id/message_send"
-      android:layout_marginBottom="5dp"
-      android:background="@drawable/bg_chat_send"
-      android:layout_marginStart="30dp"
-      >
-
-  </TextView>
-
-  <TextView
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
+      android:layout_gravity="end"
       android:layout_height="wrap_content"
-      android:padding="5dp"
+      android:padding="15dp"
+      android:textColor="@color/netral_100"
+      android:textSize="16sp"
       android:minHeight="50dp"
-      android:textColor="@android:color/black"
-      android:layout_marginBottom="5dp"
-      android:textSize="20sp"
-      android:id="@+id/message_receive"
-      android:background="@drawable/bg_chat_receive"
-      android:layout_marginEnd="30dp"
-      >
+      android:letterSpacing="0.06"
+      android:text="Halo"
+      android:gravity="center_vertical"
+      android:layout_marginBottom="12dp"
+      android:background="@drawable/bg_chat_send"
+      android:layout_marginStart="30dp"/>
 
-  </TextView>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/bot_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:src="@drawable/ic_frame_22"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:minHeight="50dp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:text="halo"
+        android:shadowDx="10.5"
+        android:shadowColor="@color/shadow"
+        android:gravity="center_vertical"
+        android:id="@+id/message_receive"
+        android:background="@drawable/bg_chat_receive"
+        android:layout_marginEnd="30dp"
+        >
+    </TextView>
+  </LinearLayout>
+
 
 </LinearLayout>
